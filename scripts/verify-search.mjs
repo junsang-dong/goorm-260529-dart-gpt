@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const list = JSON.parse(
-  readFileSync(join(__dirname, '../public/data/kospi-companies.json'), 'utf8'),
+  readFileSync(join(__dirname, '../api/data/kospi-companies.json'), 'utf8'),
 )
 
 function search(q) {
