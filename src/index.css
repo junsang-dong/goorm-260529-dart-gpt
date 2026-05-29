@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: Georgia, Merriweather, 'Times New Roman', serif;
+  --color-wsj-bg: #f7f1e5;
+  --color-wsj-text: #111111;
+  --color-wsj-accent: #0b3954;
+  --color-wsj-border: #d8d2c2;
+  --color-wsj-muted: #5c5749;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply m-0 min-h-dvh font-serif antialiased;
+    background-color: var(--color-wsj-bg);
+    color: var(--color-wsj-text);
+  }
+
+  #root {
+    @apply min-h-dvh;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.45s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skeleton-pulse {
+    animation: skeleton-pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-pulse {
+    0%,
+    100% {
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+}
